@@ -1,0 +1,81 @@
+<!--
+   - Joe's Hotdog Stand 
+   - by: Ansgar Jordan
+   - Date: 2/12/2020
+   - Assignment 5 
+ -->
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<link rel="stylesheet" type="text/css" href="style.css">
+ 
+ </head>
+ <h1> Welcome to Joe's Hotdog Stand! </h1>
+ <body>
+ 		<script language ="javascript">
+ 		
+ 		function calculate_total()
+ 		{
+ 			var hotdogs = document.getElementById("h").value;
+ 			var fries   = document.getElementById("f").value;
+ 			var drinks  = document.getElementById("d").value;
+
+
+ 			document.getElementById("numfries").innerHTML   = "Number of fries------" + fries;
+ 			document.getElementById("numhotdogs").innerHTML = "Number of Hotdogs-" + hotdogs;
+ 			document.getElementById("numdrinks").innerHTML  = "Number of Drinks---" + drinks;
+
+ 			var tax 	= 1.0625;
+ 			document.getElementById("tax").innerHTML  =       "Tax--------------------" + tax;
+ 			var total   = (hotdogs * 3.25) + (fries * 2) + (drinks * 1.5);
+ 			total = total.toFixed(2);
+ 			document.getElementById("subtotal").innerHTML  =  "Subtotal:--------------" + total;
+ 			if (total >= 20){
+ 				total = total * 0.9;
+ 				total = total.toFixed(2);
+ 				document.getElementById("disctotal").innerHTML = "Discount Total-------" + total;
+ 			} 
+ 			total = total * tax;
+ 			total = total.toFixed(2);
+ 			document.getElementById("total").innerHTML  =        "Total------------------" + total;
+ 		}
+
+ 	</script>
+ 	<h2> Menu: </h2>
+ 	<p>
+ 		<ul style="padding-left: 465px;font-size:x-large;color:black;padding-right: 450px">
+ 			<li style="border: 2px solid white; background-color:white"> Joes Signature Hot Dogs --- $3.25</li>
+ 			<li style="border: 2px solid white; background-color:white"> Crispy French Fries --------- $2.00 </li>
+ 			<li style="border: 2px solid white; background-color:white"> Large Soft Drink ------------ $1.50 </li>
+ 		</ul>
+
+ 	</p>
+ 	<br style="line-height: 3">
+ 	<form id="form1" style="font-size: xx-large">
+ 		Your order: 
+ 		<pre> Hot Dogs </pre> <input type="number" id="h" name="hotdogs">
+ 		<br/>
+ 		<pre> Fries </pre> <input type="number" id="f" name="fries">
+ 		<br/>
+ 		<pre> Drinks </pre> <input type="number" id="d" name="drinks">
+ 		<br>
+ 		<br style="line-height:4">
+ 		<button style="font-size:xx-large" type="button" onclick="calculate_total()"> Calculate Total </button>
+ 	</form>
+
+ 			<p id="numfries" style="border: 2px solid white; background-color:white"></p>
+ 			<p id="numdrinks" style="border: 2px solid white; background-color:white"></p>
+ 		    <p id="numhotdogs" style="border: 2px solid white; background-color:white"></p>
+
+ 			<p id="subtotal" style="border: 2px solid white; background-color:white"></p>
+ 		 	<p id="disctotal" style="border: 2px solid white; background-color:white"></p>
+ 			<p id="tax" style="border: 2px solid white; background-color:white"></p>
+ 			<p id="total" style="border: 2px solid white; background-color:white"></p>
+
+ </body>
+ <footer style="color: white;"> 
+ 	Photo by Yuheng Chen on Unsplash
+ </footer>
+
+ </html>
